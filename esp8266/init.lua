@@ -2,14 +2,11 @@ local time = require("time")
 local lightLevels = require("lightLevels")
 local dht11 = require("dht11")
 local motionSensor = require("motionSensor")
+local mqttService = require("mqttService")
 
 wifi.sta.autoconnect(1)
-wifi.setmode(wifi.STATION)
-station_cfg={}
-station_cfg.ssid="Vogel16"
-station_cfg.pwd="g0rm0brainache"
-station_cfg.save=true
-wifi.sta.config(station_cfg)
+wifi.setmode(wifi.STATIONAP)
+enduser_setup.start()
 
 connectToAp=tmr.create()
 connectToAp:register(2000, 1, function()
@@ -24,11 +21,14 @@ connectToAp:start()
 
 
 function main()
+    mqttService.init()
     time.showOnDisplay()
     cron.schedule("* * * * *", function(e)
-        lightLevels.read()
-        dht11.read()
+        mqttService.publish("light",  lightLevels.read())
+        dht11.readSensor()
     end)
     motionSensor.read()
 end
+
+
 

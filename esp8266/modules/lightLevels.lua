@@ -4,7 +4,7 @@ local adcPin = 0
 
 function lightLevels.read()
     lightLevel = adc.read(adcPin)
-    print(lightLevel)
+    return lightLevel
 end
 
 return lightLevels

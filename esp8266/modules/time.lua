@@ -43,6 +43,7 @@ local function syncTimeAndDisplay()
         end)
         end, function()
             print("Sync fail")
+            syncTimeAndDisplay()
         end, 
     1)
 end

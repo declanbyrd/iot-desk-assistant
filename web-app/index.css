@@ -1,0 +1,32 @@
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+dl {
+  max-width: 15rem;
+}
+
+dl div {
+  display: flex;
+}
+
+dt {
+  min-width: 10rem;
+}
+
+dt:after {
+  content: ":";
+}
+
+dd {
+  margin: 0;
+  text-transform: capitalize;
+}
+
+.charts {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}

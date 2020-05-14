@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Desk Assistant</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <header>
+      <h1>
+        Smart Desk Assistant
+      </h1>
+    </header>
+    <section>
+      <h2>Current Values:</h2>
+      <dl>
+        <div>
+          <dt>Temperature</dt>
+          <dd id="tempValue">N/A</dd>
+        </div>
+        <div>
+          <dt>Humidity</dt>
+          <dd id="humiValue">N/A</dd>
+        </div>
+        <div>
+          <dt>Light Level</dt>
+          <dd id="lightValue">N/A</dd>
+        </div>
+        <div>
+          <dt>Motion Detected</dt>
+          <dd id="motionValue">N/A</dd>
+        </div>
+      </dl>
+    </section>
+    <section class="charts">
+      <div id="tempContainer"></div>
+      <div id="humiContainer"></div>
+      <div id="lightContainer"></div>
+      <div id="motionContainer"></div>
+    </section>
+  </body>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.min.js"
+    type="text/javascript"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/highcharts/8.1.0/highcharts.js"
+    type="text/javascript"
+  ></script>
+  <script src="./index.js"></script>
+</html>
